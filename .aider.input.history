@@ -1,0 +1,28 @@
+
+# 2025-07-10 17:52:21.799151
++/add scss
+
+# 2025-07-10 17:52:36.129069
++Fix this: Deprecation Warning [mixed-decls]: Sass's behavior for declarations that appear after nested
++rules will be changing to match the behavior specified by CSS in an upcoming
++version. To keep the existing behavior, move the declaration above the nested
++rule. To opt into the new behavior, wrap the declaration in `& {}`.
++
++More info: https://sass-lang.com/d/mixed-decls
++
++   ┌──> scss/_navbar.scss
++26 │     border-color: $navbar-dark-toggler-border-color;
++   │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ declaration
++   ╵
++   ┌──> node_modules/bootstrap/scss/mixins/_transition.scss
++21 │ ┌       @media (prefers-reduced-motion: reduce) {
++22 │ │         transition: none;
++23 │ │       }
++   │ └─── nested rule
++   ╵
++    scss/_navbar.scss 26:3    @import
++    scss/vizhub-ui.scss 59:9  root stylesheet
++
+
+# 2025-07-10 17:52:37.769855
++n
